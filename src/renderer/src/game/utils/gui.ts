@@ -1,7 +1,7 @@
-import { GUI, Terminal } from 'wglt'
+import { GUI, Terminal } from 'wglt';
 
 const createGUI = (term: Terminal): GUI => {
-  return new GUI(term)
-}
+  return new GUI(term);
+};
 
-export { createGUI }
+export { createGUI };

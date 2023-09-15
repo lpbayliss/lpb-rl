@@ -1,22 +1,37 @@
-import { GUI, Terminal } from 'wglt'
-import { Position } from '../components'
-import { positionQuery } from '../queries'
-import { IWorld } from 'bitecs'
+import { Position } from '../components';
+import { playerPositionQuery } from '../queries';
+import { IWorld } from 'bitecs';
+import { SystemFn } from '.';
 
-export const createMovementSystem = (term: Terminal, gui: GUI) => {
-  return (world: IWorld): IWorld => {
-    if (gui.handleInput()) return world
-
-    const moveKey = term.getMovementKey()
-    if (!moveKey) return world
-
-    const entities = positionQuery(world)
-    for (let i = 0; i < entities.length; i++) {
-      const eid = entities[i]
-      Position.x[eid] += moveKey.x
-      Position.y[eid] += moveKey.y
-    }
-
-    return world
-  }
+export enum MoveDirection {
+  NORTH = 'NORTH',
+  EAST = 'EAST',
+  SOUTH = 'SOUTH',
+  WEST = 'WEST',
 }
+
+export type MoveCommand = {
+  direction: MoveDirection;
+};
+
+export const createMovementSystem = (): [SystemFn, MoveCommand[]] => {
+  const moveBuffer: MoveCommand[] = [];
+
+  const system = (world: IWorld): IWorld => {
+    const player = playerPositionQuery(world)[0];
+    if (!player) return world;
+    console.log(`BufferLength: ${moveBuffer.length}}`);
+    while (moveBuffer.length) {
+      const command = moveBuffer.pop();
+      if (!command) continue;
+
+      if (command.direction.match(MoveDirection.NORTH)) Position.y[player] -= 1;
+      if (command.direction.match(MoveDirection.EAST)) Position.x[player] += 1;
+      if (command.direction.match(MoveDirection.SOUTH)) Position.y[player] += 1;
+      if (command.direction.match(MoveDirection.WEST)) Position.x[player] -= 1;
+    }
+    return world;
+  };
+
+  return [system, moveBuffer];
+};
