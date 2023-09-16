@@ -18,9 +18,9 @@ export const createMovementSystem = (): [SystemFn, MoveCommand[]] => {
   const moveBuffer: MoveCommand[] = [];
 
   const system = (world: IWorld): IWorld => {
-    const player = playerPositionQuery(world)[0];
-    if (!player) return world;
-    console.log(`BufferLength: ${moveBuffer.length}}`);
+    const queryResult = playerPositionQuery(world);
+    if (queryResult.length !== 1) return world;
+    const player = [0];
     while (moveBuffer.length) {
       const command = moveBuffer.pop();
       if (!command) continue;

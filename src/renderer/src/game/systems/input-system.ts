@@ -15,10 +15,8 @@ const createInputSystem = (
         dialogBuffer.push({ key: Key.VK_H });
 
       // Movement Inputs
-      if (gui.terminal.isKeyPressed(Key.VK_UP)) {
-        console.log('north');
+      if (gui.terminal.isKeyPressed(Key.VK_UP))
         moveBuffer.push({ direction: MoveDirection.NORTH });
-      }
       if (gui.terminal.isKeyPressed(Key.VK_RIGHT))
         moveBuffer.push({ direction: MoveDirection.EAST });
       if (gui.terminal.isKeyPressed(Key.VK_DOWN))
