@@ -36,8 +36,8 @@ dependencies:
     specifier: ^9.0.0
     version: 9.0.0
   wglt:
-    specifier: ^0.5.1
-    version: 0.5.1
+    specifier: ^0.6.0
+    version: 0.6.3
   zzfx:
     specifier: ^1.2.0
     version: 1.2.0
@@ -5478,8 +5478,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /wglt@0.5.1:
-    resolution: {integrity: sha512-Sgkb4r6noMxTTBgnsHsbAtCq4iNhVLnYVqYg3wkl2AmKXhdGKDSC81DzhWwJoQFvupYRFJHdCBix+s1+Nmf7PA==}
+  /wglt@0.6.3:
+    resolution: {integrity: sha512-VhgUOx7HyeleMKTXL109MZEGuLAI3mCjHOfIiN7zBBKTpRQFSkQVciNOGCqNBgIVN6zuMGPPA68wdQkv1HgoMQ==}
     dev: false
 
   /which-boxed-primitive@1.0.2:
