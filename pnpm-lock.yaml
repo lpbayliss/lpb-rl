@@ -9,8 +9,8 @@ dependencies:
     specifier: ^2.8.0
     version: 2.8.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.20)(framer-motion@10.16.1)(react-dom@18.2.0)(react@18.2.0)
   '@electron-toolkit/preload':
-    specifier: ^2.0.0
-    version: 2.0.0(electron@25.6.0)
+    specifier: ^3.0.0
+    version: 3.0.0(electron@25.6.0)
   '@electron-toolkit/utils':
     specifier: ^2.0.0
     version: 2.0.0(electron@25.6.0)
@@ -1467,8 +1467,8 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-toolkit/preload@2.0.0(electron@25.6.0):
-    resolution: {integrity: sha512-zpZDzbqJTZQC5d4LRs2EKruKWnqah+T75s+niBYFemYLtiW5TTZcWi3Q8UxHqnwTudDMuWJb233aaS2yjx3Xiw==}
+  /@electron-toolkit/preload@3.0.0(electron@25.6.0):
+    resolution: {integrity: sha512-DTyvNGits43J1RiQGFN00/OxjjcTcozLWMjgQBANt97FFptEYiLVasq7kMC24nMwwoOpdDYY9CE6C+4wQJ55/w==}
     peerDependencies:
       electron: '>=13.0.0'
     dependencies:
