@@ -28,7 +28,7 @@
     "@types/uuid": "^9.0.2",
     "bitecs": "^0.3.40",
     "electron-updater": "^6.1.1",
-    "framer-motion": "^10.16.1",
+    "framer-motion": "^11.0.0",
     "uuid": "^9.0.0",
     "wglt": "^0.5.1",
     "zzfx": "^1.2.0"
